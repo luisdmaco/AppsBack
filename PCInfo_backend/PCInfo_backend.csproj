@@ -7,8 +7,27 @@
     </PropertyGroup>
 
     <ItemGroup>
+        <PackageReference Include="AutoMapper" Version="12.0.1" />
+        <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
         <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="7.0.4" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.8" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="7.0.8" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Relational.Design" Version="1.1.6" />
+        <PackageReference Include="MySql.EntityFrameworkCore" Version="7.0.2" />
         <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="PCInfo\Controllers\" />
+      <Folder Include="PCInfo\Domain\Repositories\" />
+      <Folder Include="PCInfo\Domain\Services\Communication\" />
+      <Folder Include="PCInfo\Mapping\" />
+      <Folder Include="PCInfo\Persistence\Contexts\" />
+      <Folder Include="PCInfo\Persistence\Repositories\" />
+      <Folder Include="PCInfo\Resources\" />
+      <Folder Include="PCInfo\Services\" />
+      <Folder Include="Shared\Domain\Services\Communication\" />
+      <Folder Include="Shared\Extensions\" />
     </ItemGroup>
 
 </Project>
