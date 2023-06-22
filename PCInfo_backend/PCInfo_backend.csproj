@@ -19,13 +19,11 @@
 
     <ItemGroup>
       <Folder Include="PCInfo\Controllers\" />
-      <Folder Include="PCInfo\Domain\Services\Communication\" />
       <Folder Include="PCInfo\Mapping\" />
       <Folder Include="PCInfo\Persistence\Contexts\" />
       <Folder Include="PCInfo\Persistence\Repositories\" />
       <Folder Include="PCInfo\Resources\" />
       <Folder Include="PCInfo\Services\" />
-      <Folder Include="Shared\Domain\Services\Communication\" />
       <Folder Include="Shared\Extensions\" />
     </ItemGroup>
 
