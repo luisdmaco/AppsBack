@@ -19,7 +19,6 @@
 
     <ItemGroup>
       <Folder Include="PCInfo\Controllers\" />
-      <Folder Include="PCInfo\Domain\Repositories\" />
       <Folder Include="PCInfo\Domain\Services\Communication\" />
       <Folder Include="PCInfo\Mapping\" />
       <Folder Include="PCInfo\Persistence\Contexts\" />
