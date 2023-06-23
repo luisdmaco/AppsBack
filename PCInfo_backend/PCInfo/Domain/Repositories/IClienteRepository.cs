@@ -5,8 +5,7 @@ namespace PCInfo_backend.PCInfo.Domain.Repositories;
 public interface IClienteRepository
 {
     Task<IEnumerable<Cliente>> ListAsync();
-    Task<Cliente> GetAsync(string id);
-    Task SaveAsync(Cliente cliente);
-    void UpdateAsync(string id, Cliente cliente);
-    void DeleteAsync(string id);
+    Task AddAsync(Cliente cliente);
+    void Update(string id, Cliente cliente);
+    void Remove(Cliente cliente);
 }
