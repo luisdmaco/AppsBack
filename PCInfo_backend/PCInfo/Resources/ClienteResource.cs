@@ -4,6 +4,7 @@ namespace PCInfo_backend.PCInfo.Resources;
 
 public class ClienteResource
 {
+    public int id { get; set; }
     public string DNI { get; set; }
     public string Nombre { get; set; }
     public string Apellidos { get; set; }

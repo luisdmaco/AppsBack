@@ -2,6 +2,7 @@
 
 public class Cliente
 {
+    public int idCliente { get; set; }
     public string DNI { get; set; }
     public string Nombre { get; set; }
     public string Apellidos { get; set; }
@@ -10,6 +11,6 @@ public class Cliente
     public string Direccion { get; set; }
     
     //Relationships
-    public string IDuser { get; set; }
+    public string idUser { get; set; }
     public User user { get; set; }
 }
