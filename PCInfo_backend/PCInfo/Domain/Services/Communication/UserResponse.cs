@@ -5,10 +5,10 @@ namespace PCInfo_backend.PCInfo.Domain.Services.Communication;
 
 public class UserResponse : BaseResponse<User>
 {
-    UserResponse(string message) : base(message)
+    public UserResponse(string message) : base(message)
     {
     }
-    UserResponse(User resource) : base(resource)
+    public UserResponse(User resource) : base(resource)
     {
     }
 }
