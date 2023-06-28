@@ -13,7 +13,9 @@ public class ClienteRepository : BaseRepository, IClienteRepository
     
     public async Task<IEnumerable<Cliente>> ListAsync()
     {
-        return await _context.Clientes.ToListAsync();
+        return await _context.Clientes
+            .Include(p => p.user)
+            .ToListAsync();
     }
     
     public async Task AddAsync(Cliente cliente)
