@@ -1,3 +1,4 @@
+using System.Text;
 using Microsoft.EntityFrameworkCore;
 using PCInfo_backend.PCInfo.Domain.Repositories;
 using PCInfo_backend.PCInfo.Domain.Services;
@@ -5,6 +6,9 @@ using PCInfo_backend.PCInfo.Mapping;
 using PCInfo_backend.PCInfo.Persistence.Contexts;
 using PCInfo_backend.PCInfo.Persistence.Repositories;
 using PCInfo_backend.PCInfo.Services;
+using System.Web.Http.Cors;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -45,6 +49,37 @@ builder.Services.AddAutoMapper(
     typeof(ModelToResourceProfile),
     typeof(ResourceToModelProfile));
 
+// CORS Configuration
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAllOrigins",
+        builder => builder.AllowAnyOrigin()
+            .AllowAnyMethod()
+            .AllowAnyHeader());
+});
+
+// Add JWT Authentication
+
+/*var key = Encoding.ASCII.GetBytes(builder.Configuration["JWT:Secret"]);
+
+builder.Services.AddAuthentication(x =>
+{
+    x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+    x.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+}).AddJwtBearer(x =>
+{
+    x.RequireHttpsMetadata = false;
+    x.SaveToken = true;
+    x.TokenValidationParameters = new TokenValidationParameters
+    {
+        ValidateIssuerSigningKey = true,
+        IssuerSigningKey = new SymmetricSecurityKey(key),
+        ValidateIssuer = false,
+        ValidateAudience = false
+    };
+});*/
+
 var app = builder.Build();
 
 // Validation for ensuring Database Objects are created
@@ -54,6 +89,8 @@ using (var context = scope.ServiceProvider.GetService<AppDbContext>())
 {
         context.Database.EnsureCreated(); 
 }
+
+app.UseCors("AllowAllOrigins");
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
