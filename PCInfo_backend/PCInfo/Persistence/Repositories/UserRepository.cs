@@ -14,9 +14,7 @@ public class UserRepository : BaseRepository, IUserRepository
 
     public async Task<IEnumerable<User>> ListAsync()
     {
-        return await _context.Users
-            .Include(p => p.cliente)
-            .ToListAsync();
+        return await _context.Users.ToListAsync();
     }
 
     public async Task SaveAsync(User user)
