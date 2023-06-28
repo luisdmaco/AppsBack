@@ -3,12 +3,12 @@ using PCInfo_backend.Shared.Domain.Services.Communication;
 
 namespace PCInfo_backend.PCInfo.Domain.Services.Communication;
 
-public class ClienteResponse : BaseResponse<Cliente>
+public class RamResponse : BaseResponse<Ram>
 {
-    public ClienteResponse(string message) : base(message)
+    public RamResponse(string message) : base(message)
     {
     }
-    public ClienteResponse(Cliente resource) : base(resource)
+    public RamResponse(Ram resource) : base(resource)
     {
     }
 }

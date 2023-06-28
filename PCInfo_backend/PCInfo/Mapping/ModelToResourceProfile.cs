@@ -8,7 +8,7 @@ public class ModelToResourceProfile : Profile
 {
     public ModelToResourceProfile()
     {
-        CreateMap<User, UserResource>();
-        CreateMap<Cliente, ClienteResource>();
+        CreateMap<Ram, RamResource>();
+        
     }
 }
