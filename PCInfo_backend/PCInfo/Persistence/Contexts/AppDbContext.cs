@@ -24,7 +24,7 @@ public class AppDbContext : DbContext
         //Relationships
         builder.Entity<Cliente>()
             .HasOne(p => p.user)
-            .WithOne(p => p.cliente)
+            .WithOne()
             .HasForeignKey<Cliente>(c => c.idUser);
     }
 }
