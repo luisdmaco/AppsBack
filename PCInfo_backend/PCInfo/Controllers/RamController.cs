@@ -35,11 +35,11 @@ public class RamController : ControllerBase
     {
         if(!ModelState.IsValid)
             return BadRequest(ModelState.GetErrorMessages());
-        var category = _mapper.Map<SaveRamResource, Ram>(resource);
-        var result = await _ramService.SaveAsync(category);
+        var ram = _mapper.Map<SaveRamResource, Ram>(resource);
+        var result = await _ramService.SaveAsync(ram);
         if (!result.Success)
             return BadRequest(result.Message);
-        var ramResource = _mapper.Map<Ram, RamService>(result.Resource);
+        var ramResource = _mapper.Map<Ram, RamResource>(result.Resource);
         return Ok(ramResource);
     }
 }

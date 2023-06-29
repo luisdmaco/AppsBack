@@ -35,11 +35,11 @@ public class UserController : ControllerBase
     {
         if(!ModelState.IsValid)
             return BadRequest(ModelState.GetErrorMessages());
-        var category = _mapper.Map<SaveUserResource, User>(resource);
-        var result = await _userService.SaveAsync(category);
+        var user = _mapper.Map<SaveUserResource, User>(resource);
+        var result = await _userService.SaveAsync(user);
         if (!result.Success)
             return BadRequest(result.Message);
-        var userResource = _mapper.Map<User, UserService>(result.Resource);
+        var userResource = _mapper.Map<User, UserResource>(result.Resource);
         return Ok(userResource);
     }
 }
