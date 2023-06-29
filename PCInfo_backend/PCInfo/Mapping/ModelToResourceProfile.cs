@@ -9,6 +9,6 @@ public class ModelToResourceProfile : Profile
     public ModelToResourceProfile()
     {
         CreateMap<Ram, RamResource>();
-        
+        CreateMap<User, UserResource>();
     }
 }
